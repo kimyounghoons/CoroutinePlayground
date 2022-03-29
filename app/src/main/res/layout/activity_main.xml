@@ -13,9 +13,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:textSize="12sp"
         android:padding="10dp"
         android:text="run\nBlocking"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideRunBlocking"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,8 +28,8 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="10dp"
-        android:textSize="10sp"
         android:text="Launch\nInside\nRunBlocking"
+        android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideRunBlockingWithDelay"
         app:layout_constraintStart_toEndOf="@+id/btnRunBlocking"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,8 +44,8 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="Launch\nInside\nRunBlocking\nWithDelay"
-        app:layout_constraintEnd_toEndOf="parent"
         android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnLaunchInsideRunBlocking"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,5 +93,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCoroutineScope" />
+
+    <Button
+        android:id="@+id/btnJobJoin"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:text="job join"
+        app:layout_constraintEnd_toStartOf="@+id/btnSuspendFun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLightWeight" />
+
+    <Button
+        android:id="@+id/btnSuspendFun"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:text="suspend Fun"
+        app:layout_constraintEnd_toStartOf="@+id/launchInsideSuspendFun"
+        app:layout_constraintStart_toEndOf="@+id/btnJobJoin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLightWeight" />
+
+    <Button
+        android:id="@+id/launchInsideSuspendFun"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="suspendFunLaunch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSuspendFun"
+        app:layout_constraintTop_toBottomOf="@+id/btnLightWeight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

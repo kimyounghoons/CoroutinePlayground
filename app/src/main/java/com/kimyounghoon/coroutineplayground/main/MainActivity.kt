@@ -3,9 +3,11 @@ package com.kimyounghoon.coroutineplayground.main
 import android.os.Bundle
 import com.kimyounghoon.coroutineplayground.base.BaseActivity
 import com.kimyounghoon.coroutineplayground.databinding.ActivityMainBinding
+import com.kimyounghoon.coroutineplayground.extensions.log
 import com.kimyounghoon.coroutineplayground.extensions.logCurrentThread
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -72,6 +74,48 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     }
                 }
             }
+
+            btnJobJoin.setOnClickListener {
+                CoroutineScope(Dispatchers.Default).launch {
+                    logCurrentThread("1")
+                    val job = launch {
+                        logCurrentThread("2")
+                        delay(3000L)
+                        logCurrentThread("3")
+                    }
+                    job.join()
+                    logCurrentThread("4") //1 ,4 , 2,3
+                }
+            }
+            btnSuspendFun.setOnClickListener {
+                CoroutineScope(Dispatchers.Default).launch {
+                    logHelloWorld()
+                }
+            }
+            launchInsideSuspendFun.setOnClickListener {
+                CoroutineScope(Dispatchers.Default).launch {
+                    logHelloWorld2()
+                }
+            }
         }
     }
+
+    private suspend fun logHelloWorld() {
+        log("Hello")
+        delay(1000L)
+        log("World")
+    }
+
+    private suspend fun logHelloWorld2() {
+        coroutineScope {
+            launch {
+                log("Hello")
+            }
+
+            launch {
+                log("World")
+            }
+        }
+    }
+
 }
