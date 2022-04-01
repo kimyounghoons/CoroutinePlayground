@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lifecycle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".lifecycle.fragment.LifecycleFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Fragment Area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLaunchWhenCreated"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="launch\nWhenCreated"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchWhenStarted"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLaunchWhenStarted"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="launch\nWhenStarted"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchWhenResumed"
+        app:layout_constraintStart_toEndOf="@+id/btnLaunchWhenCreated"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLaunchWhenResumed"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="launch\nWhenResumed"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnLaunchWhenStarted"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnViewLifeCycleLaunchWhenCreated"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="viewLifecycle\nlaunch\nWhenCreated"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnViewLifeCycleLaunchWhenStarted"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLaunchWhenResumed" />
+
+    <Button
+        android:id="@+id/btnViewLifeCycleLaunchWhenStarted"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="viewLifecycle\nlaunch\nWhenStarted"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnViewLifeCycleLaunchWhenResumed"
+        app:layout_constraintStart_toEndOf="@+id/btnViewLifeCycleLaunchWhenCreated"
+        app:layout_constraintTop_toBottomOf="@+id/btnLaunchWhenResumed" />
+
+    <Button
+        android:id="@+id/btnViewLifeCycleLaunchWhenResumed"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="viewLifecycle\nlaunch\nWhenResumed"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnViewLifeCycleLaunchWhenStarted"
+        app:layout_constraintTop_toBottomOf="@+id/btnLaunchWhenResumed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

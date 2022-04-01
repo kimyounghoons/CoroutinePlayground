@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutinePlayground">
         <activity
+            android:name=".lifecycle.LifecycleActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>

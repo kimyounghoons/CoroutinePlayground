@@ -1,10 +1,12 @@
 package com.kimyounghoon.coroutineplayground.main
 
+import android.content.Intent
 import android.os.Bundle
 import com.kimyounghoon.coroutineplayground.base.BaseActivity
 import com.kimyounghoon.coroutineplayground.databinding.ActivityMainBinding
 import com.kimyounghoon.coroutineplayground.extensions.log
 import com.kimyounghoon.coroutineplayground.extensions.logCurrentThread
+import com.kimyounghoon.coroutineplayground.lifecycle.LifecycleActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
@@ -95,6 +97,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             launchInsideSuspendFun.setOnClickListener {
                 CoroutineScope(Dispatchers.Default).launch {
                     logHelloWorld2()
+                }
+            }
+
+            btnLifecycleScope.setOnClickListener {
+                Intent(this@MainActivity, LifecycleActivity::class.java).let {
+                    startActivity(it)
                 }
             }
         }
