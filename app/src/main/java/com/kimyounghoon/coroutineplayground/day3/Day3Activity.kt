@@ -1,4 +1,4 @@
-package com.kimyounghoon.coroutineplayground.lifecycle
+package com.kimyounghoon.coroutineplayground.day3
 
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -6,12 +6,16 @@ import com.kimyounghoon.coroutineplayground.R
 import com.kimyounghoon.coroutineplayground.base.BaseActivity
 import com.kimyounghoon.coroutineplayground.databinding.LifecycleActivityBinding
 import com.kimyounghoon.coroutineplayground.extensions.log
-import com.kimyounghoon.coroutineplayground.lifecycle.fragment.LifecycleFragment
+import com.kimyounghoon.coroutineplayground.day3.fragment.LifecycleFragment
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 
-class LifecycleActivity : BaseActivity<LifecycleActivityBinding>() {
+/*
+* btnLaunchWhenCreated , btnLaunchWhenStarted , btnLaunchWhenResumed 차이
+* 그리고 Fragment 에서 viewLifecycleOwner.lifecycleScope 와 lifecycleScope 차이점을 알아보자.
+* */
+class Day3Activity : BaseActivity<LifecycleActivityBinding>() {
     var currentJob: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

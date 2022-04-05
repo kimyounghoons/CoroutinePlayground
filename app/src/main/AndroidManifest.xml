@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutinePlayground">
         <activity
-            android:name=".lifecycle.LifecycleActivity"
+            android:name=".day4.Day4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".day2.Day2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".day1.Day1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".day3.Day3Activity"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"

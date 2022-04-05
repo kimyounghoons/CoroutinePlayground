@@ -4,38 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainActivity">
+    tools:context=".day1.Day1Activity">
 
     <Button
-        android:id="@+id/btnDay1"
+        android:id="@+id/btnRunBlocking"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Day1"
+        android:text="run\nBlocking"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay2"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideRunBlocking"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnDay2"
+        android:id="@+id/btnLaunchInsideRunBlocking"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Day2"
+        android:text="Launch\nInside\nRunBlocking"
         android:textSize="10sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay3"
-        app:layout_constraintStart_toEndOf="@+id/btnDay1"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideRunBlockingWithDelay"
+        app:layout_constraintStart_toEndOf="@+id/btnRunBlocking"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnDay3"
+        android:id="@+id/btnLaunchInsideRunBlockingWithDelay"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
@@ -43,44 +43,55 @@
         android:layout_marginEnd="10dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Day3"
+        android:text="Launch\nInside\nRunBlocking\nWithDelay"
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDay2"
+        app:layout_constraintStart_toEndOf="@+id/btnLaunchInsideRunBlocking"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnDay4"
+        android:id="@+id/btnCoroutineScope"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
-        android:text="Day4"
+        android:text="coroutine\nScope"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay5"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideCoroutineScope"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRunBlocking" />
 
     <Button
-        android:id="@+id/btnDay5"
+        android:id="@+id/btnLaunchInsideCoroutineScope"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
-        android:text="Day5"
+        android:text="Launch\nInside\nCoroutine\nScope"
         android:textSize="10sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay6"
-        app:layout_constraintStart_toEndOf="@+id/btnDay4"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
+        app:layout_constraintEnd_toStartOf="@+id/btnLaunchInsideCoroutineScopeWithDelay"
+        app:layout_constraintStart_toEndOf="@+id/btnCoroutineScope"
+        app:layout_constraintTop_toBottomOf="@+id/btnRunBlocking" />
 
     <Button
-        android:id="@+id/btnDay6"
+        android:id="@+id/btnLaunchInsideCoroutineScopeWithDelay"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="Day6"
+        android:text="Launch\nInside\nCoroutineScope\nWithDelay"
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDay5"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
+        app:layout_constraintStart_toEndOf="@+id/btnLaunchInsideCoroutineScope"
+        app:layout_constraintTop_toBottomOf="@+id/btnRunBlocking" />
+
+    <Button
+        android:id="@+id/btnLightWeight"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="LightWeightCoroutine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCoroutineScope" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

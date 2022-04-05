@@ -1,4 +1,4 @@
-package com.kimyounghoon.coroutineplayground.lifecycle.fragment
+package com.kimyounghoon.coroutineplayground.day3.fragment
 
 import android.os.Bundle
 import android.view.View

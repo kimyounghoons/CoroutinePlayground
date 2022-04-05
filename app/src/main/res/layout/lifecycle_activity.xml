@@ -55,6 +55,6 @@
         android:layout_margin="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLaunchWhenResumed"
-        tools:context=".lifecycle.LifecycleActivity" />
+        tools:context=".day3.Day3Activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
