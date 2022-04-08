@@ -6,4 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".day4.Day4Activity">
 
+    <Button
+        android:id="@+id/btnCancelAndJoin"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="cancel and join"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnCanNotCancelAndJoin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCanNotCancelAndJoin"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="can not cencel job"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnCanCancelAndJoin"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelAndJoin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCanCancelAndJoin"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="can cancel and join"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCanNotCancelAndJoin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnClosingResource"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:text="Closing Resource"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnNonCancellable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCanCancelAndJoin" />
+
+    <Button
+        android:id="@+id/btnNonCancellable"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:text="Non Cancellable"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnWithTimeOut"
+        app:layout_constraintStart_toEndOf="@+id/btnClosingResource"
+        app:layout_constraintTop_toBottomOf="@+id/btnCanCancelAndJoin" />
+
+    <Button
+        android:id="@+id/btnWithTimeOut"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="With TimeOut"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnNonCancellable"
+        app:layout_constraintTop_toBottomOf="@+id/btnCanCancelAndJoin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
