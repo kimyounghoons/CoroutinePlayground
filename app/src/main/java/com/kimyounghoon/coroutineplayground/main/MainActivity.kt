@@ -6,13 +6,9 @@ import com.kimyounghoon.coroutineplayground.base.BaseActivity
 import com.kimyounghoon.coroutineplayground.databinding.ActivityMainBinding
 import com.kimyounghoon.coroutineplayground.day1.Day1Activity
 import com.kimyounghoon.coroutineplayground.day2.Day2Activity
-import com.kimyounghoon.coroutineplayground.extensions.logCurrentThread
 import com.kimyounghoon.coroutineplayground.day3.Day3Activity
 import com.kimyounghoon.coroutineplayground.day4.Day4Activity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.kimyounghoon.coroutineplayground.day5.Day5Activity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +31,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
             btnDay4.setOnClickListener {
                 Intent(this@MainActivity, Day4Activity::class.java).let {
+                    startActivity(it)
+                }
+            }
+            btnDay5.setOnClickListener {
+                Intent(this@MainActivity, Day5Activity::class.java).let {
                     startActivity(it)
                 }
             }

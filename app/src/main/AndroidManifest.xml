@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutinePlayground">
         <activity
+            android:name=".day5.Day5Activity"
+            android:exported="false" />
+        <activity
             android:name=".day4.Day4Activity"
             android:exported="false" />
         <activity
