@@ -5,6 +5,7 @@ import androidx.lifecycle.lifecycleScope
 import com.kimyounghoon.coroutineplayground.base.BaseActivity
 import com.kimyounghoon.coroutineplayground.databinding.ActivityDay5Binding
 import com.kimyounghoon.coroutineplayground.extensions.log
+import com.kimyounghoon.coroutineplayground.extensions.logCurrentThread
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -32,16 +33,16 @@ class Day5Activity : BaseActivity<ActivityDay5Binding>() {
             btnAsync.setOnClickListener {
                 lifecycleScope.launch {
                     val time = measureTimeMillis {
-                        val helloDeffered = async {
+                        val helloDeferred = async {
                             log("getHelloAfter1s()시작")
                             getHelloAfter1s()
                         }
-                        val worldDeffered = async {
+                        val worldDeferred = async {
                             log("getWorldAfter2s()시작")
                             getWorldAfter2s()
                         }
-                        val hello = helloDeffered.await()
-                        val world = worldDeffered.await()
+                        val hello = helloDeferred.await()
+                        val world = worldDeferred.await()
                         log(hello + world)
                     }
                     log("time: $time")
@@ -50,15 +51,15 @@ class Day5Activity : BaseActivity<ActivityDay5Binding>() {
             btnAsync2.setOnClickListener {
                 lifecycleScope.launch {
                     val time = measureTimeMillis {
-                        val helloDeffered = async {
+                        val helloDeferred = async {
                             log("getHelloAfter1s()시작")
                             getHelloAfter1s()
                         }
-                        val worldDeffered = async {
+                        val worldDeferred = async {
                             log("getWorldAfter2s()시작")
                             getWorldAfter2s()
                         }
-                        val world = worldDeffered.await()
+                        val world = worldDeferred.await()
                         log(world)
                     }
                     log("time: $time")
@@ -67,19 +68,19 @@ class Day5Activity : BaseActivity<ActivityDay5Binding>() {
             btnLazyAsync.setOnClickListener {
                 lifecycleScope.launch {
                     val time = measureTimeMillis {
-                        val helloDeffered = async(start = CoroutineStart.LAZY) {
+                        val helloDeferred = async(start = CoroutineStart.LAZY) {
                             log("getHelloAfter1s()시작")
                             getHelloAfter1s()
                         }
-                        val worldDeffered = async(start = CoroutineStart.LAZY) {
+                        val worldDeferred = async(start = CoroutineStart.LAZY) {
                             log("getWorldAfter2s()시작")
                             getWorldAfter2s()
                         }
 
-                        helloDeffered.start()
-                        worldDeffered.start()
-                        val hello = helloDeffered.await()
-                        val world = worldDeffered.await()
+                        helloDeferred.start()
+                        worldDeferred.start()
+                        val hello = helloDeferred.await()
+                        val world = worldDeferred.await()
                         log(hello + world)
                     }
                     log("time: $time")
@@ -88,17 +89,17 @@ class Day5Activity : BaseActivity<ActivityDay5Binding>() {
             btnLazyAsync2.setOnClickListener {
                 lifecycleScope.launch {
                     val time = measureTimeMillis {
-                        val helloDeffered = async(start = CoroutineStart.LAZY) {
+                        val helloDeferred = async(start = CoroutineStart.LAZY) {
                             log("getHelloAfter1s()시작")
                             getHelloAfter1s()
                         }
-                        val worldDeffered = async(start = CoroutineStart.LAZY) {
+                        val worldDeferred = async(start = CoroutineStart.LAZY) {
                             log("getWorldAfter2s()시작")
                             getWorldAfter2s()
                         }
 
-                        worldDeffered.start()
-                        val world = worldDeffered.await()
+//                        worldDeferred.start()
+                        val world = worldDeferred.await()
                         log(world)
                     }
                     log("time: $time")
