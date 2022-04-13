@@ -19,8 +19,8 @@ import kotlinx.coroutines.withTimeout
 * CancelAndJoin , isActive 사용해서 Job 상태 확인 하기 , 리소스 정리, 취소 불가능한 잡, 잡에 타임아웃 걸기
 * */
 class Day4Activity : BaseActivity<ActivityDay4Binding>() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun initView() {
         with(binding) {
             btnCancelAndJoin.setOnClickListener {
                 lifecycleScope.launch {

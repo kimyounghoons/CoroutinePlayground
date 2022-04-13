@@ -17,8 +17,7 @@ import kotlin.system.measureTimeMillis
 * */
 class Day5Activity : BaseActivity<ActivityDay5Binding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initView() {
         with(binding) {
             btnMeasureTimeMillis.setOnClickListener {
                 lifecycleScope.launch {
@@ -98,7 +97,7 @@ class Day5Activity : BaseActivity<ActivityDay5Binding>() {
                             getWorldAfter2s()
                         }
 
-//                        worldDeferred.start()
+                        //                        worldDeferred.start()
                         val world = worldDeferred.await()
                         log(world)
                     }

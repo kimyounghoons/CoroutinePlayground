@@ -15,8 +15,8 @@ import kotlinx.coroutines.launch
 * job 의 join 기능과 suspend fun 사용
 * */
 class Day2Activity : BaseActivity<ActivityDay2Binding>() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun initView() {
         with(binding) {
             btnJobJoin.setOnClickListener {
                 CoroutineScope(Dispatchers.Default).launch {

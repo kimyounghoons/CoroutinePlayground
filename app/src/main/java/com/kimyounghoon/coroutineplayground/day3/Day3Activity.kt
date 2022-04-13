@@ -27,7 +27,9 @@ class Day3Activity : BaseActivity<LifecycleActivityBinding>() {
                 .replace(R.id.container, LifecycleFragment.newInstance())
                 .commitNow()
         }
+    }
 
+    override fun initView() {
         binding.apply {
             btnLaunchWhenCreated.setOnClickListener {
                 currentJob = lifecycleScope.launchWhenCreated {

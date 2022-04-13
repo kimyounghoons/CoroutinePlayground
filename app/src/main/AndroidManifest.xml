@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutinePlayground">
         <activity
-            android:name=".day6.Day6Activity"
-            android:windowSoftInputMode="adjustPan"
+            android:name=".day7.Day7Activity"
             android:exported="false" />
+        <activity
+            android:name=".day6.Day6Activity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".day5.Day5Activity"
             android:exported="false" />

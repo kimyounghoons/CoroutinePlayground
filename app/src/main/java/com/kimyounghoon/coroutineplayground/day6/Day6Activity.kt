@@ -23,8 +23,7 @@ class Day6Activity : BaseActivity<ActivityDay6Binding>() {
     private var dispatcher = Dispatchers.Main
     private val singleThreadContext = newSingleThreadContext("코루틴")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initView() {
         setOnclickListeners()
         initRecyclerView()
     }

@@ -16,9 +16,7 @@ import kotlinx.coroutines.runBlocking
 * */
 class Day1Activity : BaseActivity<ActivityDay1Binding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun initView() {
         with(binding) {
             btnRunBlocking.setOnClickListener {
                 runBlocking {

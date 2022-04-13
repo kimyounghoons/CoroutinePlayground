@@ -6,81 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".main.MainActivity">
 
-    <Button
-        android:id="@+id/btnDay1"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMain"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Day1"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay2"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnDay2"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Day2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay3"
-        app:layout_constraintStart_toEndOf="@+id/btnDay1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnDay3"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Day3"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDay2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnDay4"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:text="Day4"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
-
-    <Button
-        android:id="@+id/btnDay5"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:text="Day5"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDay6"
-        app:layout_constraintStart_toEndOf="@+id/btnDay4"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
-
-    <Button
-        android:id="@+id/btnDay6"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="Day6"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDay5"
-        app:layout_constraintTop_toBottomOf="@+id/btnDay1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
