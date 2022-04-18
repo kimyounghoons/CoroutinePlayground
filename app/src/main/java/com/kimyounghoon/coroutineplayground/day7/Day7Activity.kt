@@ -26,41 +26,38 @@ class Day7Activity : MainItemRecyclerActivity() {
     override fun getRecyclerListener(): (Int) -> Unit = { position ->
         when (position) {
             0 -> {
-                lifecycleScope.launch {
+                lifecycleScope.launch(Dispatchers.Default) {
                     var count = 0
-                    withContext(Dispatchers.Default) {
-                        massiveRun {
-                            count++
-                        }
+                    massiveRun {
+                        count++
                     }
+
                     log("count : $count")
                 }
             }
             1 -> {
-                lifecycleScope.launch {
-                    withContext(Dispatchers.Default) {
-                        massiveRun {
-                            volatileCounter++
-                        }
+                volatileCounter = 0
+                lifecycleScope.launch(Dispatchers.Default) {
+                    massiveRun {
+                        volatileCounter++
                     }
                     log("volatileCounter : $volatileCounter")
                 }
             }
             2 -> {
                 val atomicCounter = AtomicInteger()
-                lifecycleScope.launch {
-                    withContext(Dispatchers.Default) {
-                        massiveRun {
-                            atomicCounter.incrementAndGet()
-                        }
+                lifecycleScope.launch(Dispatchers.Default) {
+                    massiveRun {
+                        atomicCounter.incrementAndGet()
                     }
+
                     log("atomicCounter : $atomicCounter")
                 }
             }
             3 -> {
-                lifecycleScope.launch(counterContext) {
+                lifecycleScope.launch(Dispatchers.Default) {
                     var singleThreadContextCounter = 0
-                    withContext(Dispatchers.Default) {
+                    withContext(counterContext) {
                         massiveRun {
                             singleThreadContextCounter++
                         }
@@ -69,33 +66,29 @@ class Day7Activity : MainItemRecyclerActivity() {
                 }
             }
             4 -> {
-                val mutex = Mutex()
-                var mutexCounter = 0
-
-                lifecycleScope.launch {
-                    withContext(Dispatchers.Default) {
-                        massiveRun {
-                            mutex.withLock {
-                                mutexCounter++
-                            }
+                lifecycleScope.launch(Dispatchers.Default) {
+                    val mutex = Mutex()
+                    var mutexCounter = 0
+                    massiveRun {
+                        mutex.withLock {
+                            mutexCounter++
                         }
                     }
                     log("mutexCounter : $mutexCounter")
                 }
             }
             5 -> {
-                lifecycleScope.launch {
+                lifecycleScope.launch(Dispatchers.Default) {
                     val counter = counterActor()
-                    withContext(Dispatchers.Default) {
-                        massiveRun {
-                            counter.send(IncCounter)
-                        }
+
+                    massiveRun {
+                        counter.send(IncCounter)
                     }
 
                     val response = CompletableDeferred<Int>()
                     counter.send(GetCounter(response))
                     log("Counter = ${response.await()}")
-                    counter.close() // shutdown the actor
+                    counter.close()
                 }
             }
         }
@@ -120,7 +113,7 @@ class Day7Activity : MainItemRecyclerActivity() {
         MainItem(content = "volatile"),
         MainItem(content = "Atomic"),
         MainItem(content = "single Thread"),
-        MainItem(content = "mutext"),
+        MainItem(content = "mutex"),
         MainItem(content = "actors")
     )
 
