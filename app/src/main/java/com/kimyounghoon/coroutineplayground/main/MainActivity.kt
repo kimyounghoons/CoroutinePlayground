@@ -10,6 +10,7 @@ import com.kimyounghoon.coroutineplayground.day4.Day4Activity
 import com.kimyounghoon.coroutineplayground.day5.Day5Activity
 import com.kimyounghoon.coroutineplayground.day6.Day6Activity
 import com.kimyounghoon.coroutineplayground.day7.Day7Activity
+import com.kimyounghoon.coroutineplayground.day9.Day9Activity
 import com.kimyounghoon.coroutineplayground.model.MainItem
 
 @ExperimentalStdlibApi
@@ -56,6 +57,11 @@ class MainActivity : MainItemRecyclerActivity() {
                     startActivity(it)
                 }
             }
+            8 ->{
+                Intent(this@MainActivity, Day9Activity::class.java).let {
+                    startActivity(it)
+                }
+            }
         }
     }
 
@@ -67,7 +73,8 @@ class MainActivity : MainItemRecyclerActivity() {
         MainItem(content = "Day5"),
         MainItem(content = "Day6"),
         MainItem(content = "Day7"),
-        MainItem(content = "Day8")
+        MainItem(content = "Day8"),
+        MainItem(content = "Day9")
     )
 
 }
