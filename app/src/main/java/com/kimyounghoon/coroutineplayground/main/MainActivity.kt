@@ -1,6 +1,7 @@
 package com.kimyounghoon.coroutineplayground.main
 
 import android.content.Intent
+import com.kimyounghoon.coroutineplayground.Day8.Day8Activity
 import com.kimyounghoon.coroutineplayground.base.MainItemRecyclerActivity
 import com.kimyounghoon.coroutineplayground.day1.Day1Activity
 import com.kimyounghoon.coroutineplayground.day2.Day2Activity
@@ -50,6 +51,11 @@ class MainActivity : MainItemRecyclerActivity() {
                     startActivity(it)
                 }
             }
+            7 ->{
+                Intent(this@MainActivity, Day8Activity::class.java).let {
+                    startActivity(it)
+                }
+            }
         }
     }
 
@@ -60,7 +66,8 @@ class MainActivity : MainItemRecyclerActivity() {
         MainItem(content = "Day4"),
         MainItem(content = "Day5"),
         MainItem(content = "Day6"),
-        MainItem(content = "Day7")
+        MainItem(content = "Day7"),
+        MainItem(content = "Day8")
     )
 
 }
